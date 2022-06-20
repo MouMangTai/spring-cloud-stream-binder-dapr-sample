@@ -35,6 +35,6 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           
-      # Run command "mvn clean install"
-      - name: Run mvn clean install
-        run: mvn clean install
+#       # Run command "mvn clean install"
+#       - name: Run mvn clean install
+#         run: mvn clean install
