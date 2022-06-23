@@ -41,7 +41,7 @@ cd publisher
 mvn spring-boot:run
 ```
 
-#### 3. Output
+### 4. Output
 
 ```
 # publisher
