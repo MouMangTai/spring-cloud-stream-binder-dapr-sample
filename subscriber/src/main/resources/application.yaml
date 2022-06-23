@@ -1,0 +1,6 @@
+server:
+  port: 8082
+dapr:
+  client.pubsub.subscriptions:
+    - pubsubName: pubsub
+      topic: topic
