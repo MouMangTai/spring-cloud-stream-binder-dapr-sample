@@ -1,7 +1,5 @@
-/*
- * Source code recreated from a .class file by IntelliJ IDEA
- * (powered by FernFlower decompiler)
- */
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 package com.azure.spring.cloud.stream.binder.dapr.sample;
 
@@ -16,6 +14,9 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.messaging.Message;
 
+/**
+ * Publisher configuration.
+ */
 @Configuration
 @Profile("!manual")
 public class PublisherConfiguration {
@@ -29,4 +30,6 @@ public class PublisherConfiguration {
 			return MessageBuilder.withPayload("Hello world, " + i++).build();
 		};
 	}
+
+
 }
