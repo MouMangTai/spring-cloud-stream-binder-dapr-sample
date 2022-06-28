@@ -13,32 +13,20 @@ you will find that the `External Libraries`
 includes `com.azure.spring:spring-cloud-stream-binder-dapr:1.0-SNAPSHOT` dependency,
 that means the sample project already depends on our binder.
 ### 2. Run Message Subscriber app with Dapr
-```
-cd subscriber
-dapr run --app-id subscriber --app-port 9090 --components-path ../components  --app-protocol grpc --dapr-grpc-port 50001 mvn spring-boot:run
-```
-
-You can simply just run dapr, but you won't see the printout.
-```
-dapr run --app-id subscriber --app-port 9090 --components-path ../components  --app-protocol grpc --dapr-grpc-port 50001
-```
-> **Note:**
-> If you already have a message subscriber application running through dapr and meet the requirements in Pre-requisites, you can skip this step.
->
 > **Note:**
 > You also could refer to [here](https://github.com/dapr/quickstarts/tree/master/pub_sub/java/sdk#run-java-message-subscriber-app-with-dapr) to run Java message subscriber app with Dapr.
-
-#### Pre-requisites
-
-- Message subscriber App with Dapr with the following properties
-    - The protocol Dapr uses to talk to the application: **Grpc**
-    - The gRPC port for Dapr to listen on: **50001**
-    - Dapr component name: **"pubsub"**
-    - Topic name: **"topic"**
+```
+cd subscriber
+dapr run --app-id subscriber --app-port 9090 --components-path ../components  --app-protocol grpc --dapr-grpc-port 50000 mvn spring-boot:run
+```
+You can simply just run dapr, but you won't see the printout.
+```
+dapr run --app-id subscriber --app-port 9090 --components-path ../components  --app-protocol grpc --dapr-grpc-port 50000
+```
 ### 3. Run Message Publisher app which depend on Dapr binder
 ```
 cd publisher
-mvn spring-boot:run
+dapr run --app-id publisher --app-port 9091 --components-path ../components  --app-protocol grpc --dapr-grpc-port 50001 mvn spring-boot:run
 ```
 
 ### 4. Output
