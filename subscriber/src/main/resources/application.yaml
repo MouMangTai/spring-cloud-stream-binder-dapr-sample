@@ -1,6 +1,12 @@
 server:
-  port: 8082
+  port: 8083
 dapr:
   client.pubsub.subscriptions:
     - pubsubName: pubsub
       topic: topic
+    - pubsubName: pubsub2
+      topic: topic
+grpc:
+  server:
+    port: 9090
+

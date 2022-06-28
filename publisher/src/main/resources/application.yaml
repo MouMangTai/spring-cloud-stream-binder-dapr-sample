@@ -5,6 +5,19 @@ spring:
     stream:
       function:
         definition: supply
-      poller:
-        initial-delay: 0
-        fixed-delay: 1000
+      bindings:
+        supply-out-0:
+          destination: topic
+      dapr:
+        bindings:
+          supply-out-0:
+            producer:
+              pubsubName: pubsub
+              sidecarIp: 127.0.0.1
+              grpcPort: 50001
+              sync: false
+              sendTimeout: 10000
+              metadata:
+                ttlInSeconds: 60
+                rawPayload: false
+
